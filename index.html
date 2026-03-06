@@ -5,134 +5,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page - Alfa Christian Rafael Sihite</title>
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Skema Warna Kustom */
+        /* ==========================================
+           CUSTOM CSS & COLOR PALETTE OVERRIDE
+           Tema: Modern Slate & Ocean Blue
+           ========================================== */
         :root {
-            --color-dark: #3C6255;    /* Teks utama, elemen gelap, footer */
-            --color-medium: #61876E;  /* Elemen sekunder, background seksi */
-            --color-accent: #A6BB8D;  /* Aksen, hover, border */
-            --color-light: #EAE7B1;   /* Background utama terang */
+            --primary-dark: #0F172A;   /* Dark Slate */
+            --bg-light: #F8FAFC;       /* Light Slate */
+            --bg-alt: #FFFFFF;         /* Pure White untuk cards */
+            --accent-color: #0284C7;   /* Ocean Blue */
+            --accent-hover: #0369A1;   /* Darker Ocean Blue */
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--color-light);
-            color: var(--color-dark);
-            position: relative;
-        }
-
-        /* Navigasi */
-        .navbar {
-            background-color: var(--color-dark);
-            transition: all 0.3s ease;
-        }
-        .navbar-brand, .nav-link {
-            color: var(--color-light) !important;
-        }
-        .nav-link:hover {
-            color: var(--color-accent) !important;
-        }
-
-        /* Buttons */
-        .btn-custom {
-            background-color: var(--color-dark);
-            color: var(--color-light);
-            border: 2px solid var(--color-dark);
-            transition: all 0.3s ease;
-        }
-        .btn-custom:hover {
-            background-color: var(--color-accent);
-            border-color: var(--color-accent);
-            color: var(--color-dark);
-        }
-        
-        .btn-outline-custom {
-            background-color: transparent;
-            color: var(--color-dark);
-            border: 2px solid var(--color-dark);
-            transition: all 0.3s ease;
-        }
-        .btn-outline-custom:hover {
-            background-color: var(--color-accent);
-            border-color: var(--color-accent);
-            color: var(--color-dark);
-        }
-
-        /* Section Styling */
-        section {
-            padding: 100px 0;
+            background-color: var(--bg-light);
+            color: var(--primary-dark);
+            scroll-behavior: smooth;
             overflow-x: hidden;
         }
-        
-        /* Background Variations */
-        .bg-section-alt {
-            background-color: var(--color-medium);
-            color: var(--color-light);
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
         }
-        .bg-section-alt .text-muted {
-            color: var(--color-light) !important;
-            opacity: 0.8;
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-dark) !important;
+        }
+        .nav-link {
+            font-weight: 600;
+            color: var(--text-muted) !important;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-color) !important;
         }
 
-        /* Cards */
+        /* Buttons & Links */
+        .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            padding: 10px 24px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        .btn-outline-secondary {
+            color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            padding: 10px 24px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-secondary:hover {
+            background-color: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .text-accent { color: var(--accent-color); }
+        a { color: var(--accent-color); text-decoration: none; transition: 0.3s; }
+        a:hover { color: var(--accent-hover); }
+
+        /* Section Spacing */
+        section {
+            padding: 100px 0;
+        }
+        .section-alt {
+            background-color: var(--bg-alt);
+        }
+
+        /* Cards Styling */
         .card {
-            background-color: var(--color-light);
-            border: 1px solid var(--color-accent);
-            color: var(--color-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-alt);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(60, 98, 85, 0.2);
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
         }
-        
-        /* Timeline untuk Teaching */
+        .icon-box {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Timeline Styling (Experience) */
         .timeline {
-            border-left: 3px solid var(--color-accent);
-            padding-left: 20px;
-            margin-left: 20px;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 30px;
+            margin-left: 15px;
+            position: relative;
         }
         .timeline-item {
-            position: relative;
             margin-bottom: 30px;
+            position: relative;
         }
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -29px;
-            top: 5px;
-            width: 15px;
-            height: 15px;
-            background-color: var(--color-dark);
+            left: -39px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background-color: var(--bg-alt);
+            border: 3px solid var(--accent-color);
             border-radius: 50%;
         }
 
         /* Footer */
         footer {
-            background-color: var(--color-dark);
-            color: var(--color-light);
+            background-color: var(--primary-dark);
+            color: var(--bg-light);
             padding: 40px 0;
         }
         footer a {
-            color: var(--color-accent);
-            text-decoration: none;
-            transition: color 0.3s;
+            color: var(--bg-light);
+            opacity: 0.8;
         }
         footer a:hover {
-            color: var(--color-light);
+            opacity: 1;
+            color: var(--accent-color);
         }
 
-        /* CSS Animasi (Scroll Reveal) */
-        .reveal {
+        /* Animation Classes */
+        .hidden-scroll {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .reveal.active {
+        .show-scroll {
             opacity: 1;
             transform: translateY(0);
         }
@@ -142,16 +160,17 @@
 
     <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">Raphaell</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: var(--color-light);">
-                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            <a class="navbar-brand" href="#home">Raphaell</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#achievement">Achievement</a></li>
+                    <li class="nav-item"><a class="nav-link text-accent fw-bold" href="#service">Service</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -159,55 +178,57 @@
     </nav>
 
     <section id="home" class="d-flex align-items-center" style="min-height: 100vh; padding-top: 80px;">
-        <div class="container"> 
-            <div class="row align-items-center flex-column-reverse flex-md-row reveal">
-                <div class="col-md-7 mt-4 mt-md-0">
-                    <h1 class="display-4 fw-bold mb-3">Halo, Saya Alfa Christian Rafael Sihite</h1>
-                    <h3 class="text-muted mb-4" style="color: var(--color-medium) !important;">Mahasiswa Teknik Informatika</h3>
+        <div class="container">
+            <div class="row align-items-center flex-column-reverse flex-md-row">
+                <div class="col-md-7 mt-5 mt-md-0 hidden-scroll">
+                    <p class="text-accent fw-bold mb-2">Halo, Saya</p>
+                    <h1 class="display-4 fw-bold mb-3">Alfa Christian Rafael Sihite</h1>
+                    <h2 class="h4 text-muted mb-4">Mahasiswa Teknik Informatika</h2>
+                    
                     <p class="lead mb-4">
                         Saya adalah mahasiswa Teknik Informatika yang memiliki minat dalam bermain game. Saya juga memiliki passion di bidang fotografi, videografi, dan bela diri.
                     </p>
                     <div class="d-flex gap-3">
-                        <a href="#portfolio" class="btn btn-custom px-4 py-2">Lihat Portfolio</a>
-                        <a href="#contact" class="btn btn-outline-custom px-4 py-2">Hubungi Saya</a>
+                        <a href="#achievement" class="btn btn-primary">Lihat Portfolio</a>
+                        <a href="#contact" class="btn btn-outline-secondary">Hubungi Saya</a>
                     </div>
                 </div>
-                <div class="col-md-5 text-center">
-                    <img src="profnew.jpg" alt="Foto Profil Alfa" class="img-fluid rounded-circle shadow border border-4" style="border-color: var(--color-accent) !important; max-width: 350px; aspect-ratio: 1/1; object-fit: cover;">
+                <div class="col-md-5 text-center hidden-scroll">
+                    <img src="profnew.jpg" alt="Foto Profil Alfa" class="img-fluid rounded-circle shadow-lg" style="max-width: 350px; aspect-ratio: 1/1; object-fit: cover; border: 4px solid var(--accent-color);">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="bg-section-alt">
-        <div class="container reveal">
-            <h2 class="fw-bold mb-5 text-center">Skills & Expertise</h2>
-            <div class="row g-4">
+    <section id="skills" class="section-alt">
+        <div class="container hidden-scroll">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Skills & Expertise</h2>
+                <p class="text-muted">Keahlian dan bidang minat yang saya tekuni.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
                 
                 <div class="col-md-4">
-                    <div class="card h-100 p-3">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold text-dark">Taekwondo Athlete</h5>
-                            <p class="card-text text-dark small mb-0">Berpengalaman menjadi atlet Provinsi Bengkulu dalam ajang POPNAS XV 2019 Jakarta serta atlet Universitas Ma Chung dalam ajang POMPROV JATIM III 2025 </p>
-                        </div>
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="bi bi-person-arms-up"></i></div>
+                        <h5 class="card-title fw-bold mb-3">Taekwondo Athlete</h5>
+                        <p class="text-muted small mb-0">Berpengalaman menjadi atlet Provinsi Bengkulu dalam ajang POPNAS XV 2019 Jakarta serta atlet Universitas Ma Chung dalam ajang POMPROV JATIM III 2025.</p>
                     </div>
                 </div>
                 
                 <div class="col-md-4">
-                    <div class="card h-100 p-3">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold text-dark">Hardware & PC</h5>
-                            <p class="card-text text-dark small mb-0">Memiliki pemahaman dasar tentang perakitan komponen PC, manajemen daya, serta pemeliharaan sistem pendingin cair (AIO Liquid Cooler).</p>
-                        </div>
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="bi bi-pc-display"></i></div>
+                        <h5 class="card-title fw-bold mb-3">Hardware & PC</h5>
+                        <p class="text-muted small mb-0">Memiliki pemahaman dasar tentang perakitan komponen PC, manajemen daya, serta pemeliharaan sistem pendingin cair (AIO Liquid Cooler).</p>
                     </div>
                 </div>
                 
                 <div class="col-md-4">
-                    <div class="card h-100 p-3">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold text-dark">Multimedia Production</h5>
-                            <p class="card-text text-dark small mb-0">Memiliki keahlian dasar dalam bidang fotografi dan videografi, dokumentasi lapangan.</p>
-                        </div>
+                    <div class="card p-4 text-center">
+                        <div class="icon-box"><i class="bi bi-camera-reels"></i></div>
+                        <h5 class="card-title fw-bold mb-3">Multimedia Production</h5>
+                        <p class="text-muted small mb-0">Memiliki keahlian dasar dalam bidang fotografi dan videografi, serta dokumentasi lapangan.</p>
                     </div>
                 </div>
 
@@ -216,146 +237,251 @@
     </section>
 
     <section id="experience">
-        <div class="container reveal">
-            <h2 class="fw-bold mb-5 text-center">Experience & Leadership</h2>
-            <div class="row justify-content-center">
+        <div class="container hidden-scroll">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h2 class="fw-bold">Experience &<br>Leadership</h2>
+                    <p class="text-muted">Pengalaman organisasi dan kepemimpinan.</p>
+                </div>
                 <div class="col-md-8">
                     <div class="timeline">
+                        
                         <div class="timeline-item">
-                            <h4 class="fw-bold">Pelatih Taekwondo (Sabuk Hitam)</h4>
-                            <p class="text-muted fw-bold" style="color: var(--color-medium) !important;">2022 - Sekarang</p>
-                            <p>Membimbing dan melatih teknik dasar hingga lanjutan (khusus kategori kyorugi) kepada para praktisi muda mulai dari usia balita hingga dewasa. Mengembangkan kurikulum pelatihan fisik dan mental untuk persiapan turnamen, serta dapat melatih motorik anak dengan berkebutuhan khusus.</p>
+                            <h4 class="h5 fw-bold mb-1">Pelatih Taekwondo (Sabuk Hitam)</h4>
+                            <p class="text-accent fw-semibold mb-2">2022 - Sekarang</p>
+                            <p class="text-muted">
+                                Membimbing dan melatih teknik dasar hingga lanjutan (khusus kategori kyorugi) kepada para praktisi muda mulai dari usia balita hingga dewasa. Mengembangkan kurikulum pelatihan fisik dan mental untuk persiapan turnamen, serta dapat melatih motorik anak dengan berkebutuhan khusus.
+                            </p>
                         </div>
+
                         <div class="timeline-item">
-                            <h4 class="fw-bold">BPM FTD Universitas Ma Chung</h4>
-                            <p class="text-muted fw-bold" style="color: var(--color-medium) !important;">2024 - Sekarang</p>
-                            <p>Menjadi bagian dari anggota Komisi Organisasi yang bertugas dalam pengkoreksian pemberkasan Proposal - SKP kegiatan yang dilakukan oleh organisasi yang dinaungi BPM FTD Universitas Ma Chung</p>
+                            <h4 class="h5 fw-bold mb-1">BPM FTD Universitas Ma Chung</h4>
+                            <p class="text-accent fw-semibold mb-2">2024 - Sekarang</p>
+                            <p class="text-muted">
+                                Menjadi bagian dari anggota Komisi Organisasi yang bertugas dalam pengkoreksian pemberkasan Proposal - SKP kegiatan yang dilakukan oleh organisasi yang dinaungi BPM FTD Universitas Ma Chung.
+                            </p>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="achievement" class="bg-section-alt">
-        <div class="container reveal">
-            <h2 class="fw-bold mb-5 text-center">Achievements & Milestones</h2>
-            <div class="row g-4 justify-content-center">
-                
+    <section id="achievement" class="section-alt">
+        <div class="container hidden-scroll">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Achievements & Milestones</h2>
+                <p class="text-muted">Pencapaian dan rekam jejak yang membanggakan.</p>
+            </div>
+            
+            <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body bg-light text-center p-4">
-                            <div class="mb-3">
-                                <span style="font-size: 3rem;">🥋</span>
-                            </div>
-                            <h5 class="card-title fw-bold text-dark">Sabuk Hitam & Pelatih Taekwondo</h5>
-                            <p class="text-dark small fw-bold mb-3">Atlet, Sertifikasi, Kepelatihan, & Perwasitan</p>
-                            <p class="card-text text-dark small">Mencapai tingkatan sabuk hitam dengan total 8 medali emas, 5 medali perak, 3 medali perunggu mulai dari tingkat daerah - internasional dan sudah tersertifikasi dalam melakukan praktik kepelatihan dan memiliki sertifikasi wasit kota.</p>
+                    <div class="card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-trophy fs-3 text-accent me-3"></i>
+                            <h5 class="card-title fw-bold mb-0">Sabuk Hitam & Pelatih Taekwondo</h5>
                         </div>
+                        <p class="text-accent small fw-bold mb-2">Atlet, Sertifikasi, Kepelatihan, & Perwasitan</p>
+                        <p class="card-text text-muted small">Mencapai tingkatan sabuk hitam dengan total 8 medali emas, 5 medali perak, 3 medali perunggu mulai dari tingkat daerah - internasional dan sudah tersertifikasi dalam melakukan praktik kepelatihan dan memiliki sertifikasi wasit kota.</p>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body bg-light text-center p-4">
-                            <div class="mb-3">
-                                <span style="font-size: 3rem;">🤝</span>
-                            </div>
-                            <h5 class="card-title fw-bold text-dark">Voluntrip Pengabdi Muda #14</h5>
-                            <p class="text-dark small fw-bold mb-3">Arah Pemuda Indonesia</p>
-                            <p class="card-text text-dark small">Memiliki kemampuan analisis kritis, penalaran logis, dan pemecahan masalah yang terstruktur dalam merespons studi kasus pengabdian masyarakat. Terbukti dalam berhasil lolos seleksi tahap <i>Problem Solving</i> di Voluntrip Pengabdi Muda #14 yang diadakan oleh Arah Pemuda Indonesia.</p>
+                    <div class="card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-globe-asia-australia fs-3 text-accent me-3"></i>
+                            <h5 class="card-title fw-bold mb-0">Voluntrip Pengabdi Muda #14</h5>
                         </div>
+                        <p class="text-accent small fw-bold mb-2">Arah Pemuda Indonesia</p>
+                        <p class="card-text text-muted small">Memiliki kemampuan analisis kritis, penalaran logis, dan pemecahan masalah yang terstruktur dalam merespons studi kasus pengabdian masyarakat. Terbukti dalam berhasil lolos seleksi tahap <i>Problem Solving</i> di Voluntrip Pengabdi Muda #14 yang diadakan oleh Arah Pemuda Indonesia.</p>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body bg-light text-center p-4">
-                            <div class="mb-3">
-                                <span style="font-size: 3rem;">💻</span>
+                    <div class="card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-camera fs-3 text-accent me-3"></i>
+                            <h5 class="card-title fw-bold mb-0">Multimedia Production</h5>
+                        </div>
+                        <p class="text-accent small fw-bold mb-2">Pelayanan & Dokumentasi Ibadah</p>
+                        <p class="card-text text-muted small">Memiliki kemampuan dalam mengoprasikan software EasyWorship dan kemampuan dalam mengoperasikan kamera untuk videografi dan fotografi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service">
+        <div class="container hidden-scroll">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Exclusive Services</h2>
+                <p class="text-muted">Tingkatkan kemampuan bela diri dan kebugaran Anda bersama profesional.</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-lg border-0 overflow-hidden" style="border-top: 5px solid var(--accent-color) !important; background-color: var(--bg-alt);">
+                        
+                        <div class="row g-0">
+                            <div class="col-6">
+                                <img src="coach1.jpeg" alt="Sesi Latihan Privat 1" class="img-fluid" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
                             </div>
-                            <h5 class="card-title fw-bold text-dark">Multimedia Production</h5>
-                            <p class="text-dark small fw-bold mb-3">Pelayanan & Dokumentasi Ibadah</p>
-                            <p class="card-text text-dark small">Memiliki kemampuan dalam mengoprasikan software EasyWorship dan kemampuan dalam mengoperasikan kamera untuk videografi dan fotografi.</p>
+                            <div class="col-6">
+                                <img src="coach2.jpeg" alt="Sesi Latihan Privat 2" class="img-fluid" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;">
+                            </div>
+                        </div>
+                        
+                        <div class="p-4 p-md-5">
+                            <div class="text-center mb-4">
+                                <h3 class="fw-bold mt-2">Private Taekwondo Training</h3>
+                                <p class="text-muted">Sesi latihan privat (1-on-1 atau grup kecil) yang dirancang khusus menyesuaikan dengan target fisik dan tingkat kemampuan Anda. Terbuka untuk semua usia.</p>
+                            </div>
+                            
+                            <hr class="mb-4" style="border-color: var(--border-color);">
+                            
+                            <div class="row g-4 mb-5">
+                                <div class="col-md-6">
+                                    <h6 class="fw-bold text-dark mb-3"><i class="bi bi-star-fill text-accent me-2"></i> Fokus Pelatihan:</h6>
+                                    <ul class="list-unstyled text-muted small">
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Teknik Dasar hingga Lanjutan (Kyorugi)</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Persiapan Fisik & Mental Turnamen</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Kebugaran & Penurunan Berat Badan</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="fw-bold text-dark mb-3"><i class="bi bi-people-fill text-accent me-2"></i> Kategori Siswa:</h6>
+                                    <ul class="list-unstyled text-muted small">
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Balita & Anak-anak (Motorik)</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Remaja & Dewasa</li>
+                                        <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Anak Berkebutuhan Khusus</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <p class="fw-bold mb-3">Tertarik untuk memulai latihan?</p>
+                                <a href="#contact" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm">Jadwalkan Latihan</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <div class="container reveal">
-            <h2 class="fw-bold mb-5 text-center">Get In Touch</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form class="p-4 rounded" style="background-color: white; border: 1px solid var(--color-accent);">
+        <div class="container hidden-scroll">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Get In Touch</h2>
+                    <p class="text-muted mb-4">Punya pertanyaan, proyek, atau sekadar ingin menyapa? Silakan kirimkan pesan!</p>
+                    <form class="p-4 rounded shadow-sm border" style="background-color: var(--bg-alt);">
                         <div class="mb-3">
                             <label for="nameInput" class="form-label fw-bold">Nama Lengkap</label>
                             <input type="text" class="form-control" id="nameInput" placeholder="Masukkan nama Anda">
                         </div>
                         <div class="mb-3">
                             <label for="emailInput" class="form-label fw-bold">Email Anda</label>
-                            <input type="email" class="form-control" id="emailInput" placeholder="Masukkan email Anda untuk balasan">
+                            <input type="email" class="form-control" id="emailInput" placeholder="Masukkan email Anda">
                         </div>
                         <div class="mb-4">
                             <label for="messageInput" class="form-label fw-bold">Pesan</label>
                             <textarea class="form-control" id="messageInput" rows="4" placeholder="Tuliskan pesan Anda di sini..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-custom w-100">Kirim Pesan</button>
+                        <button type="submit" class="btn btn-primary w-100">Kirim Pesan</button>
                     </form>
-                    
-                    <div class="text-center mt-5">
-                        <p class="mb-3 fw-bold">Atau temukan saya di:</p>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alfarafael7@gmail.com" target="_blank" class="btn btn-outline-custom me-2 mb-2">Email Profesional</a>
-                        <a href="https://www.linkedin.com/in/alfa-christian-rafael-sihite-36609132b/" class="btn btn-outline-custom me-2 mb-2" target="_blank">LinkedIn</a>
-                        <a href="https://github.com/Alfarafael7" class="btn btn-outline-custom mb-2" target="_blank">GitHub</a>
+                </div>
+
+                <div class="col-lg-5 offset-lg-1 d-flex flex-column justify-content-center">
+                    <div class="mb-5">
+                        <h4 class="fw-bold mb-3">Informasi Kontak</h4>
+                        <ul class="list-unstyled text-muted">
+                            <li class="mb-3">
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alfarafael7@gmail.com" target="_blank" class="text-muted text-decoration-none">
+                                    <i class="bi bi-envelope-fill fs-5 me-2 text-accent align-middle"></i> alfarafael7@gmail.com
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="https://www.linkedin.com/in/alfa-christian-rafael-sihite-36609132b/" target="_blank" class="text-muted text-decoration-none">
+                                    <i class="bi bi-linkedin fs-5 me-2 text-accent align-middle"></i> LinkedIn Profile
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="https://github.com/Alfarafael7" target="_blank" class="text-muted text-decoration-none">
+                                    <i class="bi bi-github fs-5 me-2 text-accent align-middle"></i> github.com/Alfarafael7
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-geo-alt-fill fs-5 me-2 text-accent align-middle"></i> Malang, Jawa Timur, Indonesia
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 bg-white border rounded shadow-sm">
+                        <h5 class="fw-bold mb-3">Tautan Penting</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-3">
+                                <a href="https://machung.ac.id/" target="_blank" class="d-flex align-items-center text-dark text-decoration-none">
+                                    <i class="bi bi-building fs-4 me-3 text-accent"></i>
+                                    <div>
+                                        <span class="d-block fw-bold">Universitas Ma Chung</span>
+                                        <small class="text-muted">Academic Institution</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://lockey-irawan.github.io/" target="_blank" class="d-flex align-items-center text-dark text-decoration-none">
+                                    <i class="bi bi-person-workspace fs-4 me-3 text-accent"></i>
+                                    <div>
+                                        <span class="d-block fw-bold">Project Manager</span>
+                                        <small class="text-muted">Lockey Irawan</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container text-center reveal">
-            <div class="row mb-4">
-                <div class="col-md-12">
-                    <h5 class="fw-bold mb-3" style="color: var(--color-light);">Tautan Penting</h5>
-                    <div class="d-flex justify-content-center gap-4 flex-wrap">
-                        <a href="https://machung.ac.id/" target="_blank" class="fw-semibold">Universitas Ma Chung</a>
-                        <a href="https://lockey-irawan.github.io/" target="_blank" class="fw-semibold">Project Manager</a>
-                    </div>
-                </div>
-            </div>
-            <hr style="border-color: var(--color-medium);">
-            <p class="mb-0 small">&copy; 2026 Alfa Christian Rafael Sihite. All Rights Reserved.</p>
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Alfa Christian Rafael Sihite. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Fungsi untuk menambahkan class 'active' saat elemen masuk viewport
-            function reveal() {
-                var reveals = document.querySelectorAll(".reveal");
-                for (var i = 0; i < reveals.length; i++) {
-                    var windowHeight = window.innerHeight;
-                    var elementTop = reveals[i].getBoundingClientRect().top;
-                    var elementVisible = 100; // Jarak dari bawah layar sebelum animasi memicu
-                    
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveals[i].classList.add("active");
+            const scrollElements = document.querySelectorAll(".hidden-scroll");
+
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
+            };
+
+            const displayScrollElement = (element) => {
+                element.classList.add("show-scroll");
+            };
+
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
                     }
-                }
+                })
             }
 
-            // Pasang event listener saat di-scroll
-            window.addEventListener("scroll", reveal);
-            
-            // Panggil sekali saat halaman pertama kali dimuat
-            reveal();
+            // Trigger animasi saat memuat halaman
+            handleScrollAnimation();
+
+            // Trigger animasi saat di-scroll
+            window.addEventListener("scroll", () => {
+                handleScrollAnimation();
+            });
         });
     </script>
 </body>
